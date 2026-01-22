@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Animated gradient */
+    background: linear-gradient(-45deg, #89f7fe, #66a6ff, #7386df, #9b60d6);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+
+/* Keyframes for smooth gradient transition */
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    background: #fff;
+    width: 350px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.6s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-box {
+    display: flex;
+    gap: 10px;
+}
+
+.entodo {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.entodo:focus {
+    border-color: #667eea;
+}
+
+.additem {
+    background: #667eea;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.additem:hover {
+    background: #5563d6;
+}
+
+.alldelete {
+    width: 100%;
+    margin: 15px 0;
+    padding: 8px;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.alldelete:hover {
+    background: #e60000;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: #f4f6ff;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.4s ease;
+}
+
+li button {
+    margin-left: 5px;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+li button:first-of-type {
+    background: #ff4d4d;
+    color: white;
+}
+
+li button:last-of-type {
+    background: #4caf50;
+    color: white;
+}
+
+li button:hover {
+    opacity: 0.8;
+}
+
+
+/* Animations */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/*  */
+
+
+/* Todo items appear animation */
+
+li {
+    background: #f4f6ff;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Animation */
+    animation: popIn 0.4s ease forwards;
+    opacity: 0;
+    /* start hidden for animation */
+}
+
+
+/* Add animation keyframes */
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+/* Button hover animation */
+
+li button {
+    margin-left: 5px;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+li button:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+
+/* Input focus animation */
+
+.entodo:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.6);
+    transition: 0.3s;
+}
